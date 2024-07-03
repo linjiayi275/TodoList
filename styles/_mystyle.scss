@@ -1,0 +1,233 @@
+body{
+  background: linear-gradient(-177deg, $themeColor-4 0%, $themeColor-4 39%, $themeColor-3 39%, $themeColor-3 100%);
+  height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: $themeColor-2-dark;
+  font-family: 'Nanum Myeongjo', 'Noto Serif TC', serif, sans-serif;
+  font-weight: 600;
+  .wrap{
+    padding-top: 60px;
+    position: relative;
+    header{
+      h1,h2{
+        font-weight: 800;
+        font-style: italic;
+        letter-spacing: 10px;
+        text-transform: uppercase;
+      }
+      h1{
+        font-size: 350%;
+        color: $themeColor-5-light;
+      }
+      h2{
+        font-size: 200%;
+        color: $themeColor-1;
+      }
+      @include smallPad{
+        h1,h2{
+          font-size: 120%;
+        }
+      }
+      .reset{
+        position: absolute;
+        top: 20px;
+        right: 10px;
+        color: $themeColor-3;
+        border-radius: 50%;
+        border: 2px solid $themeColor-3;
+        background: transparent;
+        font-weight: 800;
+        text-transform: uppercase;
+        width: 55px;
+        height: 55px;
+        padding-top: 2px;
+        font-size: 75%;
+        &:hover,&:focus{
+          background: $themeColor-5;
+        }
+      }
+    }
+    form{
+      input{
+        padding: 10px;
+        border-radius: 5px;
+        border: 0;
+      }
+      button{
+        border: 2px solid $themeColor-3;
+        color: $themeColor-3;
+        border-radius: 5px;
+        background: transparent;
+        font-weight: 800;
+        padding: 8px 12px;
+        &:hover,&:focus{
+          background: $themeColor-5;
+        }
+      }
+    }
+    .sort{
+      label{
+        color: $themeColor-5;
+      }
+      select{
+        padding: 8px;
+        border: 1px solid $themeColor-5-dark;
+        border-radius: 5px;
+      }
+    }
+    section.checkUnDoneAndDeleteAll{
+      .countUnDone{
+        color: $themeColor-6;
+        font-weight: 900;
+        font-size: 140%;
+        padding: 0 20px;
+      }
+      .deleteAllDone{
+        border: 0;
+        background: transparent;
+        text-decoration: underline;
+        &:hover{
+          color: $themeColor-5-dark;
+        }
+      }
+    }
+    section.tabWrap{
+      .tab{
+        background: transparent;
+        border: 0;
+        border-bottom: 1px solid $themeColor-2-light;
+        padding: 5px;
+        color: $themeColor-2;
+        font-weight: 800;
+        &:hover{
+          color: $themeColor-5;
+          border-bottom: 1px solid $themeColor-5;
+        }
+        &.active{
+          border-bottom: 1px solid $themeColor-5;
+          color: $themeColor-5;
+        }
+      }
+      .tabContent{
+        height: calc(100vh - var(--minusheight));
+        overflow-y: auto;
+        &::-webkit-scrollbar-track{
+          -webkit-box-shadow: transparent;
+          background-color: transparent; //捲軸底色
+        }
+        &::-webkit-scrollbar {
+          width: 6px; //捲軸寬度
+          background-color: transparent;
+        }
+        &::-webkit-scrollbar-thumb{
+          background-color: transparent; //捲軸本體顏色
+        }
+        &:hover{
+          &::-webkit-scrollbar-track{
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            background-color: $themeColor-2-light; //捲軸底色
+          }
+          &::-webkit-scrollbar {
+            width: 6px; //捲軸寬度
+            background-color: $themeColor-2-dark;
+          }
+          &::-webkit-scrollbar-thumb{
+            background-color: $themeColor-4; //捲軸本體顏色
+          }
+        }
+        .item{
+          word-break: break-all;
+          padding: 20px 20px 10px 20px;
+          border-radius: 5px;
+          position: relative;
+          &:nth-child(odd){
+            background: $themeColor-2-light-op;
+          }
+          &:nth-child(even){
+            background: $themeColor-3-light-op;
+          }
+          input {
+            -webkit-appearance: none;
+            width: 25px;
+            height: 25px;
+            border: 1px solid $themeColor-2-light;
+            border-radius: 50%;
+            vertical-align: sub;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-90%);
+            left: 25px;
+            outline: none;
+          
+            &:checked {
+              background-color: $themeColor-5;
+              border-color: $themeColor-2-light;
+              
+          
+              & + label {
+                text-decoration: line-through;
+                color: $themeColor-2-light;
+                font-weight: 600;
+              }
+          
+              &:focus,
+              &:hover {
+                box-shadow: 0 0 0 3px $themeColor-2-light-op;
+                border-color: $themeColor-2-light;
+                border-radius: 50%;
+              }
+            }
+          
+            &:after {
+              content: "";
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              left: 0;
+              top: 0;
+              background-image: url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9JzMwMHB4JyB3aWR0aD0nMzAwcHgnICBmaWxsPSIjZmZmZmZmIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgdmVyc2lvbj0iMS4xIiB4PSIwcHgiIHk9IjBweCI+PHRpdGxlPmljb25fYnlfUG9zaGx5YWtvdjEwPC90aXRsZT48ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz48ZyBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48ZyBmaWxsPSIjZmZmZmZmIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNi4wMDAwMDAsIDI2LjAwMDAwMCkiPjxwYXRoIGQ9Ik0xNy45OTk5ODc4LDMyLjQgTDEwLjk5OTk4NzgsMjUuNCBDMTAuMjI2Nzg5MSwyNC42MjY4MDE0IDguOTczMTg2NDQsMjQuNjI2ODAxNCA4LjE5OTk4Nzc5LDI1LjQgTDguMTk5OTg3NzksMjUuNCBDNy40MjY3ODkxNCwyNi4xNzMxOTg2IDcuNDI2Nzg5MTQsMjcuNDI2ODAxNCA4LjE5OTk4Nzc5LDI4LjIgTDE2LjU4NTc3NDIsMzYuNTg1Nzg2NCBDMTcuMzY2ODIyOCwzNy4zNjY4MzUgMTguNjMzMTUyOCwzNy4zNjY4MzUgMTkuNDE0MjAxNCwzNi41ODU3ODY0IEw0MC41OTk5ODc4LDE1LjQgQzQxLjM3MzE4NjQsMTQuNjI2ODAxNCA0MS4zNzMxODY0LDEzLjM3MzE5ODYgNDAuNTk5OTg3OCwxMi42IEw0MC41OTk5ODc4LDEyLjYgQzM5LjgyNjc4OTEsMTEuODI2ODAxNCAzOC41NzMxODY0LDExLjgyNjgwMTQgMzcuNzk5OTg3OCwxMi42IEwxNy45OTk5ODc4LDMyLjQgWiI+PC9wYXRoPjwvZz48L2c+PC9nPjwvc3ZnPg==");
+              background-size: 40px;
+              background-repeat: no-repeat;
+              background-position: center;
+            }
+          
+            &:focus,
+            &:hover {
+              box-shadow: 0 0 0 2px $themeColor-1;
+              border-color: $themeColor-2-light-op;
+            }
+          }
+          label {
+            padding: 0.75rem 1rem 0.75rem calc(1.2rem * 2.25);
+            display: inline-block;
+            font-size: 105%;
+            width: 100%;
+            user-select: none;
+            cursor: pointer;
+          }
+          .deleteBtn{
+            background: $themeColor-2-light;
+            border: 1px solid $themeColor-2-light;
+            border-radius: 50%;
+            color: $themeColor-3;
+            padding: 2.5px 8px;
+            &:hover{
+              background: $themeColor-1;
+              color: $themeColor-2-dark;
+            }
+            i{
+              pointer-events: none; //可以讓使用者點不到它
+            }
+          }
+          .date{
+            color: $themeColor-2-light;
+            font-size: 75%;
+          }
+        }
+
+      }
+    }
+    
+  }
+}

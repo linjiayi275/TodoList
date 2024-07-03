@@ -1,0 +1,30 @@
+@mixin bigPad{
+  @media (max-width: 1200px) {
+    @content
+  }
+}
+@mixin middlePad{
+  @media (max-width: 1024px) {
+    @content
+  }
+}
+@mixin smallPad{
+  @media (max-width: 768px) {
+    @content
+  }
+}
+@mixin bigPhone{
+  @media (max-width: 576px) {
+    @content
+  }
+}
+@mixin middlePhone{
+  @media (max-width: 480px) {
+    @content
+  }
+}
+@mixin smallPhone{
+  @media (max-width: 375px) {
+    @content
+  }
+}

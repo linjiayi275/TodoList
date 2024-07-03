@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="JIA-YI LIN" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+    <meta name="rating" content="General" />
+    <meta name="description" content="" />
+    <title>My Todo List</title>
+    <link rel="stylesheet" href="./styles/style.css">
+  </head>
+  <body>
+    <div class="container wrap">
+      <header>
+        <div class="row">
+          <div class="col-12 d-flex align-items-center flex-column">
+            <h2 class="myName"></h2>
+            <h1 class="mt-2">- todo list -</h1>
+            <button class="reset">reset</button>
+          </div>
+        </div>
+      </header>
+      <form action="">
+        <div class="row justify-content-center pt-4">
+          <div class="col-md-11 col-10">
+            <div class="row">
+              <div class="col-lg-3 col-md-4 col-12"><input type="date" value="" min="2000-01-01" max="9999-12-31" placeholder="YYYY-MM-DD" class="w-100 curr"></div>
+              <div class="col-lg-9 col-md-8 col-12 mt-2 mt-md-0"><input type="text" placeholder="新增待辦事項" class="w-100 enterToDoText" autofocus></div>
+            </div>
+          </div>
+          <div class="col-md-1 col-2 d-flex justify-content-end"><button type="submit" class="addItemBtn">＋</button></div>
+        </div>
+      </form>
+      <div class="sort">
+        <div class="d-flex justify-content-end pt-4 align-items-center">
+          <label for="sortByTime">依時間排序&nbsp;&nbsp;&nbsp;</label>
+          <select name="sortByTime" id="sortByTime">
+            <option value="chose">請選擇</option>
+            <option value="neartofar">由近到遠</option>
+            <option value="fartonear">由遠到近</option>
+          </select>
+        </div>
+      </div>
+      <section class="checkUnDoneAndDeleteAll">
+        <div class="d-flex justify-content-between align-items-center pt-4">
+          <div>
+            <span class="countUnDone"></span>個待完成項目
+          </div>
+          <div>
+            <button class="deleteAllDone">清除所有已完成項目</button>
+          </div>
+        </div>
+      </section>
+      <section class="tabWrap">
+        <div class="container tabBtn">
+          <div class="row pt-4">
+            <button class="col-4 tab d-flex justify-content-center active allItemTab">全部</button>
+            <button class="col-4 tab d-flex justify-content-center UnDoneItemTab">未完成</button>
+            <button class="col-4 tab d-flex justify-content-center DoneItemTab">已完成</button>
+          </div>
+        </div>
+        <ul class="tabContent container mb-0">
+          
+        </ul>
+      </section>
+    </div>
+    <script src="./sub.js"></script>
+    <script src="./app.js"></script>
+    <!-- <script src="./mergeSort.js"></script> -->
+  </body>
+</html>
+
+
+  
